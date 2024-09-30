@@ -1,0 +1,33 @@
+<div class="login-container">
+  <div class="login-form">
+    <h1>Login</h1>
+    <form action="#" [formGroup]="formLogin" (ngSubmit)="onlogin()">
+
+      <div class="alert alert-danger" *ngIf="message">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>{{message}}</strong>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" placeholder="Enter your email" required>
+
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit">Login</button>
+      <div class="options">
+        <div class="remember-me">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>
+        <div class="forgot-password">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+      <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+    </form>
+  </div>
+</div>

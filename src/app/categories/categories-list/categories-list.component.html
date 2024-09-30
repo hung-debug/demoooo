@@ -1,0 +1,37 @@
+<form [formGroup]="filtersForm">
+    <div>
+      <label for="showMe">Show Me:</label>
+      <select formControlName="showMe">
+        <option value="everything">Everything</option>
+        <option value="unseen">Movies I Haven't Seen</option>
+        <option value="seen">Movies I Have Seen</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="searchAllReleases">Search all releases?</label>
+      <input type="checkbox" formControlName="searchAllReleases" />
+    </div>
+  
+    <div>
+      <label for="fromDate">From Date:</label>
+      <input type="date" formControlName="fromDate" />
+    </div>
+  
+    <div>
+      <label for="toDate">To Date:</label>
+      <input type="date" formControlName="toDate" />
+    </div>
+  
+    <div class="genres-container">
+      <label for="genres">Genres:</label>
+      <div *ngFor="let genre of genres">
+        <label>
+          <input type="checkbox" /> {{ genre }}
+        </label>
+      </div>
+    </div>
+  
+    <button type="submit">Apply Filters</button>
+  </form>
+  
